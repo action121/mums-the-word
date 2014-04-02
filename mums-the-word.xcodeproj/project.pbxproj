@@ -23,6 +23,9 @@
 		8F18CEC818EB941A00DFA6F3 /* MTWMicControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F18CEC718EB941A00DFA6F3 /* MTWMicControl.m */; };
 		8FF5A90418EBAC4A00DEF216 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF5A90318EBAC4A00DEF216 /* MasterViewController.xib */; };
 		8FF5A90718EBAC4F00DEF216 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5A90618EBAC4F00DEF216 /* MasterViewController.m */; };
+		8FF5A91818EBBC6D00DEF216 /* ERAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5A91318EBBC6D00DEF216 /* ERAudioDevice.m */; };
+		8FF5A91918EBBC6D00DEF216 /* ERInputVolumeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5A91518EBBC6D00DEF216 /* ERInputVolumeControl.m */; };
+		8FF5A91A18EBBC6D00DEF216 /* ERVolumeAdjust-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8FF5A91618EBBC6D00DEF216 /* ERVolumeAdjust-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,12 @@
 		8FF5A90318EBAC4A00DEF216 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = View/MasterViewController.xib; sourceTree = "<group>"; };
 		8FF5A90518EBAC4F00DEF216 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = ViewController/MasterViewController.h; sourceTree = "<group>"; };
 		8FF5A90618EBAC4F00DEF216 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = ViewController/MasterViewController.m; sourceTree = "<group>"; };
+		8FF5A91218EBBC6D00DEF216 /* ERAudioDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERAudioDevice.h; path = Classes/ERVolumeAdjust/ERAudioDevice.h; sourceTree = "<group>"; };
+		8FF5A91318EBBC6D00DEF216 /* ERAudioDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERAudioDevice.m; path = Classes/ERVolumeAdjust/ERAudioDevice.m; sourceTree = "<group>"; };
+		8FF5A91418EBBC6D00DEF216 /* ERInputVolumeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ERInputVolumeControl.h; path = Classes/ERVolumeAdjust/ERInputVolumeControl.h; sourceTree = "<group>"; };
+		8FF5A91518EBBC6D00DEF216 /* ERInputVolumeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ERInputVolumeControl.m; path = Classes/ERVolumeAdjust/ERInputVolumeControl.m; sourceTree = "<group>"; };
+		8FF5A91618EBBC6D00DEF216 /* ERVolumeAdjust-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ERVolumeAdjust-Info.plist"; path = "Classes/ERVolumeAdjust/ERVolumeAdjust-Info.plist"; sourceTree = "<group>"; };
+		8FF5A91718EBBC6D00DEF216 /* ERVolumeAdjust-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ERVolumeAdjust-Prefix.pch"; path = "Classes/ERVolumeAdjust/ERVolumeAdjust-Prefix.pch"; sourceTree = "<group>"; };
 		DB286CEDFEAC432898A16EC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +211,7 @@
 		8F18CEC018EB93B200DFA6F3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8FF5A90818EBBC3500DEF216 /* ERVolumeAdjust */,
 				8F18CEC518EB93F800DFA6F3 /* MicControl */,
 				8F18CEC118EB93CE00DFA6F3 /* HotKey */,
 			);
@@ -224,6 +234,19 @@
 				8F18CEC718EB941A00DFA6F3 /* MTWMicControl.m */,
 			);
 			name = MicControl;
+			sourceTree = "<group>";
+		};
+		8FF5A90818EBBC3500DEF216 /* ERVolumeAdjust */ = {
+			isa = PBXGroup;
+			children = (
+				8FF5A91218EBBC6D00DEF216 /* ERAudioDevice.h */,
+				8FF5A91318EBBC6D00DEF216 /* ERAudioDevice.m */,
+				8FF5A91418EBBC6D00DEF216 /* ERInputVolumeControl.h */,
+				8FF5A91518EBBC6D00DEF216 /* ERInputVolumeControl.m */,
+				8FF5A91618EBBC6D00DEF216 /* ERVolumeAdjust-Info.plist */,
+				8FF5A91718EBBC6D00DEF216 /* ERVolumeAdjust-Prefix.pch */,
+			);
+			name = ERVolumeAdjust;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +332,7 @@
 				8F161FAE18E664D9003AA44F /* Images.xcassets in Resources */,
 				8F161FA618E664D9003AA44F /* Credits.rtf in Resources */,
 				8F161FAC18E664D9003AA44F /* MainMenu.xib in Resources */,
+				8FF5A91A18EBBC6D00DEF216 /* ERVolumeAdjust-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +386,8 @@
 			files = (
 				8F18CEC818EB941A00DFA6F3 /* MTWMicControl.m in Sources */,
 				8F161FA918E664D9003AA44F /* AppDelegate.m in Sources */,
+				8FF5A91918EBBC6D00DEF216 /* ERInputVolumeControl.m in Sources */,
+				8FF5A91818EBBC6D00DEF216 /* ERAudioDevice.m in Sources */,
 				8F18CEC418EB93E900DFA6F3 /* MTWHotkey.m in Sources */,
 				8FF5A90718EBAC4F00DEF216 /* MasterViewController.m in Sources */,
 				8F161FA218E664D9003AA44F /* main.m in Sources */,

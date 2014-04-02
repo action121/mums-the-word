@@ -88,10 +88,10 @@
     commandMenuItem.tag = MenuItem_CommandKey;
     [menuItems addObject:commandMenuItem];
     
-    NSMenuItem *customCombinationMenyItem = [[NSMenuItem alloc] init];
-    customCombinationMenyItem.title = @"Custom Combination";
-    customCombinationMenyItem.tag = MenuItem_CustomCombination;
-    [menuItems addObject:customCombinationMenyItem];
+//    NSMenuItem *customCombinationMenyItem = [[NSMenuItem alloc] init];
+//    customCombinationMenyItem.title = @"Custom Combination";
+//    customCombinationMenyItem.tag = MenuItem_CustomCombination;
+//    [menuItems addObject:customCombinationMenyItem];
 }
 
 #pragma mark Button Actions

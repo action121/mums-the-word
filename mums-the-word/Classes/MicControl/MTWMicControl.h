@@ -10,4 +10,5 @@
 
 @interface MTWMicControl : NSObject
 + (id)sharedInstance;
+- (void)setInputVolume:(NSInteger)inputVolumeValue;
 @end

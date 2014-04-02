@@ -12,10 +12,10 @@
 @interface MTWHotkey : NSObject
 typedef NS_ENUM(NSUInteger, KeyOption)
 {
-    MenuItem_ControlKey = 0,
-    MenuItem_OptionKey,
-    MenuItem_CommandKey,
-    MenuItem_CustomCombination
+    MenuItem_ControlKey = 59,
+    MenuItem_OptionKey = 58,
+    MenuItem_CommandKey = 55,
+    MenuItem_CustomCombination = 100
 };
 
 + (MTWHotkey *)sharedInstance;

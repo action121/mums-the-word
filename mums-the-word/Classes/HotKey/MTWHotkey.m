@@ -9,6 +9,7 @@
 #import "MTWHotkey.h"
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
+#import "MTWMicControl.h"
 
 @interface MTWHotkey()
 
@@ -81,6 +82,7 @@
 
 -(void)unregisterHotkey
 {
+    [[MTWMicControl sharedInstance] setInputVolume:100];
     [self unregisterMASShortcut];
     [self unregisterModifierKeys];
 }
@@ -106,9 +108,14 @@
 - (void)registerModifierKeys
 {
     self.eventMonitor = [NSEvent addGlobalMonitorForEventsMatchingMask:NSFlagsChangedMask handler: ^(NSEvent *event) {
+        NSLog(@"%ld was Pressed. Key Code: %hu", (long)self.modifiersFlagsMask, event.keyCode);
         NSUInteger flags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;
-        if(flags == self.modifiersFlagsMask){
-            NSLog(@"%ld was Pressed.", (long)self.modifiersFlagsMask);
+        if(flags & self.modifiersFlagsMask){
+            [[MTWMicControl sharedInstance] setInputVolume:100];
+        }
+        else if(event.keyCode == self.selectedHotkey)
+        {
+            [[MTWMicControl sharedInstance] setInputVolume:0];
         }
     }];
 }
