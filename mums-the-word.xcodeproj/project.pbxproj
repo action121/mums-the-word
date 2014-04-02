@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21DF14FDC8BD47FCBFDF1D5F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1960BCF17653478FB1E637FB /* libPods.a */; };
+		8F161F9618E664D9003AA44F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F161F9518E664D9003AA44F /* Cocoa.framework */; };
+		8F161FA018E664D9003AA44F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F161F9E18E664D9003AA44F /* InfoPlist.strings */; };
+		8F161FA218E664D9003AA44F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F161FA118E664D9003AA44F /* main.m */; };
+		8F161FA618E664D9003AA44F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8F161FA418E664D9003AA44F /* Credits.rtf */; };
+		8F161FA918E664D9003AA44F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F161FA818E664D9003AA44F /* AppDelegate.m */; };
+		8F161FAC18E664D9003AA44F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F161FAA18E664D9003AA44F /* MainMenu.xib */; };
+		8F161FAE18E664D9003AA44F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F161FAD18E664D9003AA44F /* Images.xcassets */; };
+		8F161FB518E664D9003AA44F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F161FB418E664D9003AA44F /* XCTest.framework */; };
+		8F161FB618E664D9003AA44F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F161F9518E664D9003AA44F /* Cocoa.framework */; };
+		8F161FBE18E664D9003AA44F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8F161FBC18E664D9003AA44F /* InfoPlist.strings */; };
+		8F161FC018E664D9003AA44F /* mums_the_wordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F161FBF18E664D9003AA44F /* mums_the_wordTests.m */; };
+		8F161FCC18E70C86003AA44F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F161FCA18E70C86003AA44F /* MasterViewController.m */; };
+		8F161FCD18E70C86003AA44F /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F161FCB18E70C86003AA44F /* MasterViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F161FB718E664D9003AA44F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F161F8A18E664D9003AA44F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F161F9118E664D9003AA44F;
+			remoteInfo = "mums-the-word";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1960BCF17653478FB1E637FB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F161F9218E664D9003AA44F /* mums-the-word.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mums-the-word.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F161F9518E664D9003AA44F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		8F161F9818E664D9003AA44F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		8F161F9918E664D9003AA44F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8F161F9A18E664D9003AA44F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8F161F9D18E664D9003AA44F /* mums-the-word-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mums-the-word-Info.plist"; sourceTree = "<group>"; };
+		8F161F9F18E664D9003AA44F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F161FA118E664D9003AA44F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8F161FA318E664D9003AA44F /* mums-the-word-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mums-the-word-Prefix.pch"; sourceTree = "<group>"; };
+		8F161FA518E664D9003AA44F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		8F161FA718E664D9003AA44F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8F161FA818E664D9003AA44F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8F161FAB18E664D9003AA44F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		8F161FAD18E664D9003AA44F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8F161FB318E664D9003AA44F /* mums-the-wordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mums-the-wordTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F161FB418E664D9003AA44F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		8F161FBB18E664D9003AA44F /* mums-the-wordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "mums-the-wordTests-Info.plist"; sourceTree = "<group>"; };
+		8F161FBD18E664D9003AA44F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8F161FBF18E664D9003AA44F /* mums_the_wordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mums_the_wordTests.m; sourceTree = "<group>"; };
+		8F161FC918E70C86003AA44F /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		8F161FCA18E70C86003AA44F /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		8F161FCB18E70C86003AA44F /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		DB286CEDFEAC432898A16EC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8F161F8F18E664D9003AA44F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F161F9618E664D9003AA44F /* Cocoa.framework in Frameworks */,
+				21DF14FDC8BD47FCBFDF1D5F /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F161FB018E664D9003AA44F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F161FB618E664D9003AA44F /* Cocoa.framework in Frameworks */,
+				8F161FB518E664D9003AA44F /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F161F8918E664D9003AA44F = {
+			isa = PBXGroup;
+			children = (
+				8F161F9B18E664D9003AA44F /* mums-the-word */,
+				8F161FB918E664D9003AA44F /* mums-the-wordTests */,
+				8F161F9418E664D9003AA44F /* Frameworks */,
+				8F161F9318E664D9003AA44F /* Products */,
+				DB286CEDFEAC432898A16EC9 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		8F161F9318E664D9003AA44F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8F161F9218E664D9003AA44F /* mums-the-word.app */,
+				8F161FB318E664D9003AA44F /* mums-the-wordTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8F161F9418E664D9003AA44F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F161F9518E664D9003AA44F /* Cocoa.framework */,
+				8F161FB418E664D9003AA44F /* XCTest.framework */,
+				8F161F9718E664D9003AA44F /* Other Frameworks */,
+				1960BCF17653478FB1E637FB /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F161F9718E664D9003AA44F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F161F9818E664D9003AA44F /* AppKit.framework */,
+				8F161F9918E664D9003AA44F /* CoreData.framework */,
+				8F161F9A18E664D9003AA44F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		8F161F9B18E664D9003AA44F /* mums-the-word */ = {
+			isa = PBXGroup;
+			children = (
+				8F161FA718E664D9003AA44F /* AppDelegate.h */,
+				8F161FA818E664D9003AA44F /* AppDelegate.m */,
+				8F161FAA18E664D9003AA44F /* MainMenu.xib */,
+				8F161FAD18E664D9003AA44F /* Images.xcassets */,
+				8F161F9C18E664D9003AA44F /* Supporting Files */,
+				8F161FC918E70C86003AA44F /* MasterViewController.h */,
+				8F161FCA18E70C86003AA44F /* MasterViewController.m */,
+				8F161FCB18E70C86003AA44F /* MasterViewController.xib */,
+			);
+			path = "mums-the-word";
+			sourceTree = "<group>";
+		};
+		8F161F9C18E664D9003AA44F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F161F9D18E664D9003AA44F /* mums-the-word-Info.plist */,
+				8F161F9E18E664D9003AA44F /* InfoPlist.strings */,
+				8F161FA118E664D9003AA44F /* main.m */,
+				8F161FA318E664D9003AA44F /* mums-the-word-Prefix.pch */,
+				8F161FA418E664D9003AA44F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F161FB918E664D9003AA44F /* mums-the-wordTests */ = {
+			isa = PBXGroup;
+			children = (
+				8F161FBF18E664D9003AA44F /* mums_the_wordTests.m */,
+				8F161FBA18E664D9003AA44F /* Supporting Files */,
+			);
+			path = "mums-the-wordTests";
+			sourceTree = "<group>";
+		};
+		8F161FBA18E664D9003AA44F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F161FBB18E664D9003AA44F /* mums-the-wordTests-Info.plist */,
+				8F161FBC18E664D9003AA44F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8F161F9118E664D9003AA44F /* mums-the-word */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F161FC318E664D9003AA44F /* Build configuration list for PBXNativeTarget "mums-the-word" */;
+			buildPhases = (
+				2BBD267831E345F19A2894D3 /* Check Pods Manifest.lock */,
+				8F161F8E18E664D9003AA44F /* Sources */,
+				8F161F8F18E664D9003AA44F /* Frameworks */,
+				8F161F9018E664D9003AA44F /* Resources */,
+				FF65DFEBA52C4FA0800497CC /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mums-the-word";
+			productName = "mums-the-word";
+			productReference = 8F161F9218E664D9003AA44F /* mums-the-word.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8F161FB218E664D9003AA44F /* mums-the-wordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F161FC618E664D9003AA44F /* Build configuration list for PBXNativeTarget "mums-the-wordTests" */;
+			buildPhases = (
+				8F161FAF18E664D9003AA44F /* Sources */,
+				8F161FB018E664D9003AA44F /* Frameworks */,
+				8F161FB118E664D9003AA44F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8F161FB818E664D9003AA44F /* PBXTargetDependency */,
+			);
+			name = "mums-the-wordTests";
+			productName = "mums-the-wordTests";
+			productReference = 8F161FB318E664D9003AA44F /* mums-the-wordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8F161F8A18E664D9003AA44F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = squarestaq;
+				TargetAttributes = {
+					8F161FB218E664D9003AA44F = {
+						TestTargetID = 8F161F9118E664D9003AA44F;
+					};
+				};
+			};
+			buildConfigurationList = 8F161F8D18E664D9003AA44F /* Build configuration list for PBXProject "mums-the-word" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8F161F8918E664D9003AA44F;
+			productRefGroup = 8F161F9318E664D9003AA44F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8F161F9118E664D9003AA44F /* mums-the-word */,
+				8F161FB218E664D9003AA44F /* mums-the-wordTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8F161F9018E664D9003AA44F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F161FCD18E70C86003AA44F /* MasterViewController.xib in Resources */,
+				8F161FA018E664D9003AA44F /* InfoPlist.strings in Resources */,
+				8F161FAE18E664D9003AA44F /* Images.xcassets in Resources */,
+				8F161FA618E664D9003AA44F /* Credits.rtf in Resources */,
+				8F161FAC18E664D9003AA44F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F161FB118E664D9003AA44F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F161FBE18E664D9003AA44F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2BBD267831E345F19A2894D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF65DFEBA52C4FA0800497CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8F161F8E18E664D9003AA44F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F161FA918E664D9003AA44F /* AppDelegate.m in Sources */,
+				8F161FCC18E70C86003AA44F /* MasterViewController.m in Sources */,
+				8F161FA218E664D9003AA44F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F161FAF18E664D9003AA44F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F161FC018E664D9003AA44F /* mums_the_wordTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F161FB818E664D9003AA44F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F161F9118E664D9003AA44F /* mums-the-word */;
+			targetProxy = 8F161FB718E664D9003AA44F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8F161F9E18E664D9003AA44F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F161F9F18E664D9003AA44F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		8F161FA418E664D9003AA44F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F161FA518E664D9003AA44F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		8F161FAA18E664D9003AA44F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F161FAB18E664D9003AA44F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		8F161FBC18E664D9003AA44F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8F161FBD18E664D9003AA44F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8F161FC118E664D9003AA44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8F161FC218E664D9003AA44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8F161FC418E664D9003AA44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB286CEDFEAC432898A16EC9 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mums-the-word/mums-the-word-Prefix.pch";
+				INFOPLIST_FILE = "mums-the-word/mums-the-word-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		8F161FC518E664D9003AA44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB286CEDFEAC432898A16EC9 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mums-the-word/mums-the-word-Prefix.pch";
+				INFOPLIST_FILE = "mums-the-word/mums-the-word-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		8F161FC718E664D9003AA44F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mums-the-word.app/Contents/MacOS/mums-the-word";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mums-the-word/mums-the-word-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "mums-the-wordTests/mums-the-wordTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		8F161FC818E664D9003AA44F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/mums-the-word.app/Contents/MacOS/mums-the-word";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mums-the-word/mums-the-word-Prefix.pch";
+				INFOPLIST_FILE = "mums-the-wordTests/mums-the-wordTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8F161F8D18E664D9003AA44F /* Build configuration list for PBXProject "mums-the-word" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F161FC118E664D9003AA44F /* Debug */,
+				8F161FC218E664D9003AA44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F161FC318E664D9003AA44F /* Build configuration list for PBXNativeTarget "mums-the-word" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F161FC418E664D9003AA44F /* Debug */,
+				8F161FC518E664D9003AA44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8F161FC618E664D9003AA44F /* Build configuration list for PBXNativeTarget "mums-the-wordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F161FC718E664D9003AA44F /* Debug */,
+				8F161FC818E664D9003AA44F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8F161F8A18E664D9003AA44F /* Project object */;
+}
