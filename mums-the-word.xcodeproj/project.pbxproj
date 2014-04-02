@@ -21,6 +21,8 @@
 		8F161FC018E664D9003AA44F /* mums_the_wordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F161FBF18E664D9003AA44F /* mums_the_wordTests.m */; };
 		8F161FCC18E70C86003AA44F /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F161FCA18E70C86003AA44F /* MasterViewController.m */; };
 		8F161FCD18E70C86003AA44F /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F161FCB18E70C86003AA44F /* MasterViewController.xib */; };
+		8F18CEC418EB93E900DFA6F3 /* MTWHotkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F18CEC318EB93E900DFA6F3 /* MTWHotkey.m */; };
+		8F18CEC818EB941A00DFA6F3 /* MTWMicControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F18CEC718EB941A00DFA6F3 /* MTWMicControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		8F161FC918E70C86003AA44F /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		8F161FCA18E70C86003AA44F /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
 		8F161FCB18E70C86003AA44F /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MasterViewController.xib; sourceTree = "<group>"; };
+		8F18CEC218EB93E900DFA6F3 /* MTWHotkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTWHotkey.h; path = Classes/HotKey/MTWHotkey.h; sourceTree = "<group>"; };
+		8F18CEC318EB93E900DFA6F3 /* MTWHotkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTWHotkey.m; path = Classes/HotKey/MTWHotkey.m; sourceTree = "<group>"; };
+		8F18CEC618EB941A00DFA6F3 /* MTWMicControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTWMicControl.h; path = Classes/MicControl/MTWMicControl.h; sourceTree = "<group>"; };
+		8F18CEC718EB941A00DFA6F3 /* MTWMicControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTWMicControl.m; path = Classes/MicControl/MTWMicControl.m; sourceTree = "<group>"; };
 		DB286CEDFEAC432898A16EC9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,14 +132,15 @@
 		8F161F9B18E664D9003AA44F /* mums-the-word */ = {
 			isa = PBXGroup;
 			children = (
+				8F18CEC018EB93B200DFA6F3 /* Classes */,
+				8F18CEBF18EB938B00DFA6F3 /* Models */,
+				8F18CEBE18EB936F00DFA6F3 /* ViewController */,
+				8F18CEBD18EB935B00DFA6F3 /* View */,
 				8F161FA718E664D9003AA44F /* AppDelegate.h */,
 				8F161FA818E664D9003AA44F /* AppDelegate.m */,
 				8F161FAA18E664D9003AA44F /* MainMenu.xib */,
 				8F161FAD18E664D9003AA44F /* Images.xcassets */,
 				8F161F9C18E664D9003AA44F /* Supporting Files */,
-				8F161FC918E70C86003AA44F /* MasterViewController.h */,
-				8F161FCA18E70C86003AA44F /* MasterViewController.m */,
-				8F161FCB18E70C86003AA44F /* MasterViewController.xib */,
 			);
 			path = "mums-the-word";
 			sourceTree = "<group>";
@@ -166,6 +173,57 @@
 				8F161FBC18E664D9003AA44F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8F18CEBD18EB935B00DFA6F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F161FCB18E70C86003AA44F /* MasterViewController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		8F18CEBE18EB936F00DFA6F3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8F161FC918E70C86003AA44F /* MasterViewController.h */,
+				8F161FCA18E70C86003AA44F /* MasterViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		8F18CEBF18EB938B00DFA6F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8F18CEC018EB93B200DFA6F3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8F18CEC518EB93F800DFA6F3 /* MicControl */,
+				8F18CEC118EB93CE00DFA6F3 /* HotKey */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		8F18CEC118EB93CE00DFA6F3 /* HotKey */ = {
+			isa = PBXGroup;
+			children = (
+				8F18CEC218EB93E900DFA6F3 /* MTWHotkey.h */,
+				8F18CEC318EB93E900DFA6F3 /* MTWHotkey.m */,
+			);
+			name = HotKey;
+			sourceTree = "<group>";
+		};
+		8F18CEC518EB93F800DFA6F3 /* MicControl */ = {
+			isa = PBXGroup;
+			children = (
+				8F18CEC618EB941A00DFA6F3 /* MTWMicControl.h */,
+				8F18CEC718EB941A00DFA6F3 /* MTWMicControl.m */,
+			);
+			name = MicControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,8 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F18CEC818EB941A00DFA6F3 /* MTWMicControl.m in Sources */,
 				8F161FA918E664D9003AA44F /* AppDelegate.m in Sources */,
 				8F161FCC18E70C86003AA44F /* MasterViewController.m in Sources */,
+				8F18CEC418EB93E900DFA6F3 /* MTWHotkey.m in Sources */,
 				8F161FA218E664D9003AA44F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

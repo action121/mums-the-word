@@ -1,4 +1,4 @@
-    //
+//
 //  MasterViewController.m
 //  mums-the-word
 //
@@ -8,11 +8,9 @@
 
 #import "MasterViewController.h"
 #import "AppDelegate.h"
-#import "MASShortcut.h"
+#import "MTWHotkey.h"
 #import "MASShortcutView.h"
 #import "MASShortcutView+UserDefaults.h"
-#import "MASShortcut+UserDefaults.h"
-#import "MASShortcut+Monitoring.h"
 
 #define OptionsList_SelectShortcutKey "Select Shortcut Key"
 #define OptionsList_ControlKey "Control Key"
@@ -20,15 +18,14 @@
 #define OptionsList_CommandKey "Command Key"
 #define OptionsList_CustomCombination "Custom Combination"
 
+
 @interface MasterViewController ()
 {
     NSStatusItem * statusItem;
     BOOL mtwEnabled;
     
-    //for monitoring global keys
-    id eventMonitor;
-    
-    NSArray *menuItems;
+    //NSInteger selectedOption;
+    NSMutableArray *menuItems;
 }
 @property (weak) IBOutlet NSTextField *labelStatus;
 @property (weak) IBOutlet NSButton *buttonEnable;
@@ -37,8 +34,6 @@
 @end
 
 @implementation MasterViewController
-// Think up a preference key to store a global shortcut between launches
-NSString *const kPreferenceGlobalShortcut = @"MTWGlobalShortcut";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,9 +41,9 @@ NSString *const kPreferenceGlobalShortcut = @"MTWGlobalShortcut";
     if (self) {
         // Initialization code here.
         // Assign the preference key and the shortcut view will take care of persistence
-        self.shortcutView.associatedUserDefaultsKey = kPreferenceGlobalShortcut;
+        self.shortcutView.associatedUserDefaultsKey = [MTWHotkey getGlobalPreferenceShortcut];
         mtwEnabled = NO;
-        menuItems = @[@OptionsList_SelectShortcutKey, @OptionsList_ControlKey, @OptionsList_OptionKey, @OptionsList_CommandKey, @OptionsList_CustomCombination];
+        [self setupMenuItemsArray];
     }
     return self;
 }
@@ -64,12 +59,42 @@ NSString *const kPreferenceGlobalShortcut = @"MTWGlobalShortcut";
     
     [self.labelStatus setStringValue:@"Status: MTW is disabled."];
     
-    [self.optionsList addItemsWithTitles:menuItems];
+    for(NSMenuItem *menuItem in menuItems)
+    {
+        [self.optionsList.menu addItem:menuItem];
+    }
+    
     [[self.optionsList menu] setDelegate:self];
     
     [self.shortcutView setHidden:YES];
 }
 
+-(void)setupMenuItemsArray
+{
+    menuItems = [[NSMutableArray alloc] init];
+    
+    NSMenuItem *controlMenuItem = [[NSMenuItem alloc] init];
+    controlMenuItem.title = @"Control Key";
+    controlMenuItem.tag = MenuItem_ControlKey;
+    [menuItems addObject:controlMenuItem];
+    
+    NSMenuItem *optionsMenuItem = [[NSMenuItem alloc] init];
+    optionsMenuItem.title = @"Option Key";
+    optionsMenuItem.tag = MenuItem_OptionKey;
+    [menuItems addObject:optionsMenuItem];
+    
+    NSMenuItem *commandMenuItem = [[NSMenuItem alloc] init];
+    commandMenuItem.title = @"Command Key";
+    commandMenuItem.tag = MenuItem_CommandKey;
+    [menuItems addObject:commandMenuItem];
+    
+    NSMenuItem *customCombinationMenyItem = [[NSMenuItem alloc] init];
+    customCombinationMenyItem.title = @"Custom Combination";
+    customCombinationMenyItem.tag = MenuItem_CustomCombination;
+    [menuItems addObject:customCombinationMenyItem];
+}
+
+#pragma mark Button Actions
 - (IBAction)toggleMTWAction:(id)sender
 {
     mtwEnabled = !mtwEnabled;
@@ -77,75 +102,42 @@ NSString *const kPreferenceGlobalShortcut = @"MTWGlobalShortcut";
     {
         [self.labelStatus setStringValue:@"Status: MTW is enabled."];
         [self.buttonEnable setTitle:@"Disable"];
-        [self registerGlobalHotKey];
+        [[MTWHotkey sharedInstance] registerHotkey:self.shortcutView.shortcutValue];
     }
     else
     {
         [self.labelStatus setStringValue:@"Status: MTW is disabled."];
         [self.buttonEnable setTitle:@"Enable"];
-        [self unregisterGlobalHotkey];
-    }
-}
-
-- (void)registerGlobalHotKey
-{
-    eventMonitor = [NSEvent addGlobalMonitorForEventsMatchingMask:NSFlagsChangedMask handler: ^(NSEvent *event) {
-        NSUInteger flags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;
-        if(flags == NSControlKeyMask){
-            NSLog(@"Control Key Pressed!");
-        }
-    }];
-}
-
-- (void)unregisterGlobalHotkey
-{
-    [NSEvent removeMonitor:eventMonitor];
-    eventMonitor = nil;
-}
-
-- (IBAction)toggleMicAction:(id)sender {
-    NSInteger micEnabled = ((NSButton *)sender).state;
-    if(micEnabled)
-    {
-        [MASShortcut setGlobalShortcut:self.shortcutView.shortcutValue forUserDefaultsKey:kPreferenceGlobalShortcut];
-        // Execute your block of code automatically when user triggers a shortcut from preferences
-        [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kPreferenceGlobalShortcut handler:^{
-            // Let me know if you find a better or more convenient API.
-            NSLog(@"Shortcut Pressed");
-        }];
-        
-    }
-    else
-    {
-        [MASShortcut unregisterGlobalShortcutWithUserDefaultsKey:kPreferenceGlobalShortcut];
+        [[MTWHotkey sharedInstance] unregisterHotkey];
     }
 }
 
 #pragma mark NSMenu Actions
 - (IBAction)shortcutOptionsAction:(NSPopUpButton *)sender {
-    NSLog(@"Selected Item: %@", sender.selectedItem.title);
-    NSString *selectedItemTitle = sender.selectedItem.title;
+    NSLog(@"User Selected Menu Item: %@", sender.selectedItem.title);
+    [MTWHotkey sharedInstance].selectedHotkey = sender.selectedItem.tag;
+    switch(sender.selectedItem.tag)
+    {
+        case MenuItem_ControlKey:
+            [self.shortcutView setHidden:YES];
+            break;
+        case MenuItem_OptionKey:
+            [self.shortcutView setHidden:YES];
+            break;
+        case MenuItem_CommandKey:
+            [self.shortcutView setHidden:YES];
+            break;
+        case MenuItem_CustomCombination:
+            [self.shortcutView setHidden:NO];
+            break;
+        default:
+            [self.shortcutView setHidden:YES];
+            break;
+    }
     
-    if([selectedItemTitle isEqualToString:@OptionsList_ControlKey])
-    {
-        [self.shortcutView setHidden:YES];
-    }
-    else if([selectedItemTitle isEqualToString:@OptionsList_OptionKey])
-    {
-        [self.shortcutView setHidden:YES];
-    }
-    else if([selectedItemTitle isEqualToString:@OptionsList_CommandKey])
-    {
-        [self.shortcutView setHidden:YES];
-    }
-    else if([selectedItemTitle isEqualToString:@OptionsList_CustomCombination])
-    {
-        [self.shortcutView setHidden:NO];
-    }
-    else if([selectedItemTitle isEqualToString:@OptionsList_SelectShortcutKey])
-    {
-        [self.shortcutView setHidden:YES];
-    }
+    //if mtw is already enabled and the user has changed the hotkey, then disable mtw
+    if(mtwEnabled)
+       [self toggleMTWAction:nil];
 }
 
 @end
