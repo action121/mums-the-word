@@ -82,7 +82,8 @@
 
 -(void)unregisterHotkey
 {
-    [[MTWMicControl sharedInstance] setInputVolume:100];
+    [[MTWMicControl sharedInstance] unmuteMic];
+    //[[MTWMicControl sharedInstance] setInputVolume:100];
     [self unregisterMASShortcut];
     [self unregisterModifierKeys];
 }
@@ -111,11 +112,13 @@
         NSLog(@"%ld was Pressed. Key Code: %hu", (long)self.modifiersFlagsMask, event.keyCode);
         NSUInteger flags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;
         if(flags & self.modifiersFlagsMask){
-            [[MTWMicControl sharedInstance] setInputVolume:100];
+            [[MTWMicControl sharedInstance] unmuteMic];
+            //[[MTWMicControl sharedInstance] setInputVolume:100];
         }
         else if(event.keyCode == self.selectedHotkey)
         {
-            [[MTWMicControl sharedInstance] setInputVolume:0];
+            [[MTWMicControl sharedInstance] muteMic];
+            //[[MTWMicControl sharedInstance] setInputVolume:0];
         }
     }];
 }

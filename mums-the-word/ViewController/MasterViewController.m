@@ -54,7 +54,11 @@
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:delegate.statusBarMenu];
+    
     [statusItem setTitle:@"MTW"];
+    //NSString *myFilePath = [[NSBundle mainBundle] pathForResource: @"mic" ofType: @"png"];
+    //NSImage *img = [[NSImage alloc] initWithContentsOfFile:myFilePath];
+    
     [statusItem setHighlightMode:YES];
     
     [self.labelStatus setStringValue:@"Status: MTW is disabled."];

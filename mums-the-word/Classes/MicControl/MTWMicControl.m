@@ -49,8 +49,38 @@
     return self;
 }
 
-- (void)setInputVolume:(NSInteger)inputVolumeValue
+-(void)muteMic
 {
+    NSDictionary *errorInfo = nil;
+    
+    NSString *myFilePath = [[NSBundle mainBundle] pathForResource: @"mute_mic" ofType: @"applescript"];
+    NSString *content = [NSString stringWithContentsOfFile:myFilePath encoding:NSUTF8StringEncoding error:nil];
+    //NSURL *myFilePathURL = [NSURL URLWithString:myFilePath];
+    NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource:content];
+    
+    if(!errorInfo)
+    {
+        [appleScript executeAndReturnError:&errorInfo];
+    }
+}
+
+-(void)unmuteMic
+{
+    NSDictionary *errorInfo = nil;
+    
+    NSString *myFilePath = [[NSBundle mainBundle] pathForResource: @"unmute_mic" ofType: @"applescript"];
+    NSString *content = [NSString stringWithContentsOfFile:myFilePath encoding:NSUTF8StringEncoding error:nil];
+    NSAppleScript* appleScript = [[NSAppleScript alloc] initWithSource:content];
+    
+    if(!errorInfo)
+    {
+        [appleScript executeAndReturnError:&errorInfo];
+    }
+}
+
+- (void)setInputVolume:(float)inputVolumeValue
+{
+    
     for(NSString *deviceStr in self.audioDeviceListStrings)
     {
         NSString *selectedInputAudioDeviceString = deviceStr;
@@ -61,9 +91,11 @@
         }
         else
         {
+            NSLog(@"Set input volume to: %f", inputVolumeValue);
             [self.volumeController setInputDeviceVolume:inputVolumeValue];
         }
     }
+    
 }
 #pragma mark Private Helpers
 @end
