@@ -22,13 +22,10 @@
 @interface MasterViewController ()
 {
     NSStatusItem * statusItem;
-    BOOL mtwEnabled;
     
     //NSInteger selectedOption;
     NSMutableArray *menuItems;
 }
-@property (weak) IBOutlet NSTextField *labelStatus;
-@property (weak) IBOutlet NSButton *buttonEnable;
 @property (weak) IBOutlet NSPopUpButton *optionsList;
 @property (nonatomic, weak) IBOutlet MASShortcutView *shortcutView;
 @end
@@ -42,8 +39,7 @@
         // Initialization code here.
         // Assign the preference key and the shortcut view will take care of persistence
         self.shortcutView.associatedUserDefaultsKey = [MTWHotkey getGlobalPreferenceShortcut];
-        mtwEnabled = NO;
-        [MTWHotkey sharedInstance].selectedHotkey = MenuItem_ControlKey;
+        
         [self setupMenuItemsArray];
     }
     return self;
@@ -51,18 +47,21 @@
 
 - (void)awakeFromNib
 {
+    [MTWHotkey sharedInstance].selectedHotkey = MenuItem_ControlKey;
+    [self reloadMTWAction:nil];
+    
     AppDelegate *delegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
     
+    //menu bar icon
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:delegate.statusBarMenu];
     
-    [statusItem setTitle:@"MTW"];
-    //NSString *myFilePath = [[NSBundle mainBundle] pathForResource: @"mic" ofType: @"png"];
-    //NSImage *img = [[NSImage alloc] initWithContentsOfFile:myFilePath];
+    //[statusItem setTitle:@"MTW"];
+    NSString *myFilePath = [[NSBundle mainBundle] pathForResource: @"mic-20x20" ofType: @"png"];
+    NSImage *img = [[NSImage alloc] initWithContentsOfFile:myFilePath];
+    [statusItem setImage:img];
     
     [statusItem setHighlightMode:YES];
-    
-    [self.labelStatus setStringValue:@"Status: MTW is disabled."];
     
     for(NSMenuItem *menuItem in menuItems)
     {
@@ -70,7 +69,6 @@
     }
     
     [[self.optionsList menu] setDelegate:self];
-    
     [self.shortcutView setHidden:YES];
 }
 
@@ -93,28 +91,17 @@
     commandMenuItem.tag = MenuItem_CommandKey;
     [menuItems addObject:commandMenuItem];
     
-//    NSMenuItem *customCombinationMenyItem = [[NSMenuItem alloc] init];
-//    customCombinationMenyItem.title = @"Custom Combination";
-//    customCombinationMenyItem.tag = MenuItem_CustomCombination;
-//    [menuItems addObject:customCombinationMenyItem];
+    //    NSMenuItem *customCombinationMenyItem = [[NSMenuItem alloc] init];
+    //    customCombinationMenyItem.title = @"Custom Combination";
+    //    customCombinationMenyItem.tag = MenuItem_CustomCombination;
+    //    [menuItems addObject:customCombinationMenyItem];
 }
 
 #pragma mark Button Actions
-- (IBAction)toggleMTWAction:(id)sender
+- (IBAction)reloadMTWAction:(id)sender
 {
-    mtwEnabled = !mtwEnabled;
-    if(mtwEnabled)
-    {
-        [self.labelStatus setStringValue:@"Status: MTW is enabled."];
-        [self.buttonEnable setTitle:@"Disable"];
-        [[MTWHotkey sharedInstance] registerHotkey:self.shortcutView.shortcutValue];
-    }
-    else
-    {
-        [self.labelStatus setStringValue:@"Status: MTW is disabled."];
-        [self.buttonEnable setTitle:@"Enable"];
-        [[MTWHotkey sharedInstance] unregisterHotkey];
-    }
+    [[MTWHotkey sharedInstance] unregisterHotkey];
+    [[MTWHotkey sharedInstance] registerHotkey:self.shortcutView.shortcutValue];
 }
 
 #pragma mark NSMenu Actions
@@ -140,9 +127,7 @@
             break;
     }
     
-    //if mtw is already enabled and the user has changed the hotkey, then disable mtw
-    if(mtwEnabled)
-       [self toggleMTWAction:nil];
+    [self reloadMTWAction:nil];
 }
 
 @end

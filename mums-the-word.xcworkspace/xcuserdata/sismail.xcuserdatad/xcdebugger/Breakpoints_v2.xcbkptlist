@@ -420,11 +420,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mums-the-word/ViewController/MasterViewController.m"
-            timestampString = "424754725.221045"
+            timestampString = "424756764.13497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "-setupMenuItemsArray"
             landmarkType = "5">
          </BreakpointContent>
@@ -468,7 +468,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mums-the-word/Classes/HotKey/MTWHotkey.m"
-            timestampString = "424754377.065535"
+            timestampString = "424756410.1145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
@@ -514,28 +514,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mums-the-word/ViewController/MasterViewController.m"
-            timestampString = "424754725.221045"
+            timestampString = "424756295.602653"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "-awakeFromNib"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "mums-the-word/Classes/HotKey/MTWHotkey.m"
-            timestampString = "424754383.866252"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-registerModifierKeys"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

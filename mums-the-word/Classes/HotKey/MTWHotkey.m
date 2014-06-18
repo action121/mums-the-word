@@ -109,14 +109,16 @@
 - (void)registerModifierKeys
 {
     self.eventMonitor = [NSEvent addGlobalMonitorForEventsMatchingMask:NSFlagsChangedMask handler: ^(NSEvent *event) {
-        NSLog(@"%ld was Pressed. Key Code: %hu", (long)self.modifiersFlagsMask, event.keyCode);
+        //NSLog(@"Key %ld was Pressed. Key Code: %hu", (long)self.modifiersFlagsMask, event.keyCode);
         NSUInteger flags = [event modifierFlags] & NSDeviceIndependentModifierFlagsMask;
         if(flags & self.modifiersFlagsMask){
+            NSLog(@"Unmuting Mic - %@", [NSDate date]);
             [[MTWMicControl sharedInstance] unmuteMic];
             //[[MTWMicControl sharedInstance] setInputVolume:100];
         }
         else if(event.keyCode == self.selectedHotkey)
         {
+            NSLog(@"Muting Mic - %@", [NSDate date]);
             [[MTWMicControl sharedInstance] muteMic];
             //[[MTWMicControl sharedInstance] setInputVolume:0];
         }
