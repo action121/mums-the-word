@@ -43,6 +43,7 @@
         // Assign the preference key and the shortcut view will take care of persistence
         self.shortcutView.associatedUserDefaultsKey = [MTWHotkey getGlobalPreferenceShortcut];
         mtwEnabled = NO;
+        [MTWHotkey sharedInstance].selectedHotkey = MenuItem_ControlKey;
         [self setupMenuItemsArray];
     }
     return self;
