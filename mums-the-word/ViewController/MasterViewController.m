@@ -8,9 +8,9 @@
 
 #import "MasterViewController.h"
 #import "AppDelegate.h"
-#import "MTWHotkey.h"
 #import "MASShortcutView.h"
 #import "MASShortcutView+UserDefaults.h"
+#import "MTWMicControl.h"
 
 #define OptionsList_SelectShortcutKey "Select Shortcut Key"
 #define OptionsList_ControlKey "Control Key"
@@ -28,6 +28,8 @@
 }
 @property (weak) IBOutlet NSPopUpButton *optionsList;
 @property (nonatomic, weak) IBOutlet MASShortcutView *shortcutView;
+@property (nonatomic, strong) NSImage *unmutedMicImg;;
+@property (nonatomic, strong) NSImage *mutedMicImg;
 @end
 
 @implementation MasterViewController
@@ -41,6 +43,10 @@
         self.shortcutView.associatedUserDefaultsKey = [MTWHotkey getGlobalPreferenceShortcut];
         
         [self setupMenuItemsArray];
+        [MTWHotkey sharedInstance].delegate = self;
+        
+        _unmutedMicImg = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"unmuted-mic" ofType: @"png"]];
+        _mutedMicImg = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource: @"muted-mic" ofType: @"png"]];
     }
     return self;
 }
@@ -49,6 +55,7 @@
 {
     [MTWHotkey sharedInstance].selectedHotkey = MenuItem_ControlKey;
     [self reloadMTWAction:nil];
+    [[MTWMicControl sharedInstance] muteMic];
     
     AppDelegate *delegate = (AppDelegate *)[NSApplication sharedApplication].delegate;
     
@@ -57,9 +64,7 @@
     [statusItem setMenu:delegate.statusBarMenu];
     
     //[statusItem setTitle:@"MTW"];
-    NSString *myFilePath = [[NSBundle mainBundle] pathForResource: @"mic-20x20" ofType: @"png"];
-    NSImage *img = [[NSImage alloc] initWithContentsOfFile:myFilePath];
-    [statusItem setImage:img];
+    [statusItem setImage:self.mutedMicImg];
     
     [statusItem setHighlightMode:YES];
     
@@ -90,11 +95,6 @@
     commandMenuItem.title = @"Command Key";
     commandMenuItem.tag = MenuItem_CommandKey;
     [menuItems addObject:commandMenuItem];
-    
-    //    NSMenuItem *customCombinationMenyItem = [[NSMenuItem alloc] init];
-    //    customCombinationMenyItem.title = @"Custom Combination";
-    //    customCombinationMenyItem.tag = MenuItem_CustomCombination;
-    //    [menuItems addObject:customCombinationMenyItem];
 }
 
 #pragma mark Button Actions
@@ -128,6 +128,24 @@
     }
     
     [self reloadMTWAction:nil];
+}
+
+
+#pragma mark - MTWHotkeyDelegate
+-(void)hotkeyWasUnpressed
+{
+    NSLog(@"Muting Mic - %@", [NSDate date]);
+    [[MTWMicControl sharedInstance] muteMic];
+    //[[MTWMicControl sharedInstance] setInputVolume:0];
+    [statusItem setImage:self.mutedMicImg];
+}
+
+-(void)hotkeyWasPressed
+{
+    NSLog(@"Unmuting Mic - %@", [NSDate date]);
+    [[MTWMicControl sharedInstance] unmuteMic];
+    //[[MTWMicControl sharedInstance] setInputVolume:100];
+    [statusItem setImage:self.unmutedMicImg];
 }
 
 @end

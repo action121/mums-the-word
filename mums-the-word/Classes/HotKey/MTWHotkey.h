@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "MASShortcut.h"
 
+@protocol MTWHotkeyDelegate <NSObject>
+
+-(void)hotkeyWasPressed;
+-(void)hotkeyWasUnpressed;
+
+@end
+
 @interface MTWHotkey : NSObject
+
 typedef NS_ENUM(NSUInteger, KeyOption)
 {
     MenuItem_ControlKey = 59,
@@ -21,8 +29,10 @@ typedef NS_ENUM(NSUInteger, KeyOption)
 + (MTWHotkey *)sharedInstance;
 + (NSString *)getGlobalPreferenceShortcut;
 
+@property (nonatomic) id <MTWHotkeyDelegate> delegate;
 @property (nonatomic) KeyOption selectedHotkey;
 
 -(void)unregisterHotkey;
 -(BOOL)registerHotkey: (MASShortcut *)shortcut;
+
 @end

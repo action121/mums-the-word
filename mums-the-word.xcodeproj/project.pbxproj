@@ -25,10 +25,9 @@
 		8F54C4FF195128AD0092F7D7 /* unmute_mic.applescript in Sources */ = {isa = PBXBuildFile; fileRef = 8F54C4FD195128AD0092F7D7 /* unmute_mic.applescript */; };
 		8F54C50019512AEF0092F7D7 /* mute_mic.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 8F54C4FC195128AD0092F7D7 /* mute_mic.applescript */; };
 		8F54C50119512AEF0092F7D7 /* unmute_mic.applescript in Resources */ = {isa = PBXBuildFile; fileRef = 8F54C4FD195128AD0092F7D7 /* unmute_mic.applescript */; };
-		8F54C504195135750092F7D7 /* mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F54C503195135750092F7D7 /* mic.png */; };
-		8FAA3F6D1951460500FAA9C2 /* mic-16x16.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FAA3F6C1951460500FAA9C2 /* mic-16x16.png */; };
-		8FAA3F6F1951465700FAA9C2 /* mic-32x32.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FAA3F6E1951465700FAA9C2 /* mic-32x32.png */; };
-		8FAA3F71195146C000FAA9C2 /* mic-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FAA3F70195146C000FAA9C2 /* mic-20x20.png */; };
+		8F6911AD1952650C00B10C98 /* muted-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6911AB1952650C00B10C98 /* muted-mic.png */; };
+		8F6911B21952652D00B10C98 /* unmuted-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6911B01952652D00B10C98 /* unmuted-mic.png */; };
+		8F6911B4195268D000B10C98 /* muted-mic-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F6911B3195268D000B10C98 /* muted-mic-white.png */; };
 		8FF5A90418EBAC4A00DEF216 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FF5A90318EBAC4A00DEF216 /* MasterViewController.xib */; };
 		8FF5A90718EBAC4F00DEF216 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5A90618EBAC4F00DEF216 /* MasterViewController.m */; };
 		8FF5A91818EBBC6D00DEF216 /* ERAudioDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FF5A91318EBBC6D00DEF216 /* ERAudioDevice.m */; };
@@ -73,10 +72,9 @@
 		8F18CEC718EB941A00DFA6F3 /* MTWMicControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTWMicControl.m; path = Classes/MicControl/MTWMicControl.m; sourceTree = "<group>"; };
 		8F54C4FC195128AD0092F7D7 /* mute_mic.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = mute_mic.applescript; path = AppleScripts/mute_mic.applescript; sourceTree = "<group>"; };
 		8F54C4FD195128AD0092F7D7 /* unmute_mic.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = unmute_mic.applescript; path = AppleScripts/unmute_mic.applescript; sourceTree = "<group>"; };
-		8F54C503195135750092F7D7 /* mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mic.png; path = Resources/mic.png; sourceTree = "<group>"; };
-		8FAA3F6C1951460500FAA9C2 /* mic-16x16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mic-16x16.png"; path = "Resources/mic-16x16.png"; sourceTree = "<group>"; };
-		8FAA3F6E1951465700FAA9C2 /* mic-32x32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mic-32x32.png"; path = "Resources/mic-32x32.png"; sourceTree = "<group>"; };
-		8FAA3F70195146C000FAA9C2 /* mic-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mic-20x20.png"; path = "Resources/mic-20x20.png"; sourceTree = "<group>"; };
+		8F6911AB1952650C00B10C98 /* muted-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "muted-mic.png"; path = "Resources/muted-mic.png"; sourceTree = "<group>"; };
+		8F6911B01952652D00B10C98 /* unmuted-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "unmuted-mic.png"; path = "Resources/unmuted-mic.png"; sourceTree = "<group>"; };
+		8F6911B3195268D000B10C98 /* muted-mic-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "muted-mic-white.png"; path = "Resources/muted-mic-white.png"; sourceTree = "<group>"; };
 		8FF5A90318EBAC4A00DEF216 /* MasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MasterViewController.xib; path = View/MasterViewController.xib; sourceTree = "<group>"; };
 		8FF5A90518EBAC4F00DEF216 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = ViewController/MasterViewController.h; sourceTree = "<group>"; };
 		8FF5A90618EBAC4F00DEF216 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = ViewController/MasterViewController.m; sourceTree = "<group>"; };
@@ -264,10 +262,9 @@
 		8F54C502195135130092F7D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8FAA3F6C1951460500FAA9C2 /* mic-16x16.png */,
-				8FAA3F70195146C000FAA9C2 /* mic-20x20.png */,
-				8FAA3F6E1951465700FAA9C2 /* mic-32x32.png */,
-				8F54C503195135750092F7D7 /* mic.png */,
+				8F6911B01952652D00B10C98 /* unmuted-mic.png */,
+				8F6911AB1952650C00B10C98 /* muted-mic.png */,
+				8F6911B3195268D000B10C98 /* muted-mic-white.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -363,18 +360,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F54C504195135750092F7D7 /* mic.png in Resources */,
 				8F161FA018E664D9003AA44F /* InfoPlist.strings in Resources */,
-				8FAA3F71195146C000FAA9C2 /* mic-20x20.png in Resources */,
+				8F6911B4195268D000B10C98 /* muted-mic-white.png in Resources */,
 				8FF5A90418EBAC4A00DEF216 /* MasterViewController.xib in Resources */,
 				8F161FAE18E664D9003AA44F /* Images.xcassets in Resources */,
-				8FAA3F6D1951460500FAA9C2 /* mic-16x16.png in Resources */,
 				8F161FA618E664D9003AA44F /* Credits.rtf in Resources */,
 				8F161FAC18E664D9003AA44F /* MainMenu.xib in Resources */,
-				8FAA3F6F1951465700FAA9C2 /* mic-32x32.png in Resources */,
 				8F54C50019512AEF0092F7D7 /* mute_mic.applescript in Resources */,
 				8F54C50119512AEF0092F7D7 /* unmute_mic.applescript in Resources */,
 				8FF5A91A18EBBC6D00DEF216 /* ERVolumeAdjust-Info.plist in Resources */,
+				8F6911B21952652D00B10C98 /* unmuted-mic.png in Resources */,
+				8F6911AD1952650C00B10C98 /* muted-mic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

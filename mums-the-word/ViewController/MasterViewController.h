@@ -7,7 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MTWHotkey.h"
 
-@interface MasterViewController : NSViewController <NSMenuDelegate>
+@interface MasterViewController : NSViewController <NSMenuDelegate, MTWHotkeyDelegate>
 
 @end
